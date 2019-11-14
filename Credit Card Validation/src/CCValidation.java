@@ -10,7 +10,7 @@ public class CCValidation
 
 		public static void main(String[] args)
 			{
-				chooseCard();
+
 				stripNumbers();
 				doubleNumbers();
 				addNumbers();
@@ -57,11 +57,6 @@ public class CCValidation
 						validCard /= 10;
 						creditNumbers[i] = lastDigit;
 					}
-			}
-
-		public static void chooseCard()
-			{
-				
 			}
 
 	}
