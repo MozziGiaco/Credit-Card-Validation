@@ -1,20 +1,31 @@
+import java.io.File;
+import java.io.IOException;
+import java.util.Scanner;
 
 public class CCValidation
 	{
-//		5424180123456789.
-		static long validCard = (long) 5424180123456789.;
+
+		static long validCard = (long) 5424180123456788.;
 		static long invalidCard = (long) 5424180123456788.;
 		static long[] creditNumbers = new long[16];
 		static long vCard = validCard;
 		static long inCard = invalidCard;
+		static long cardNumber;
 
-		public static void main(String[] args)
+		public static void main(String[] args) throws IOException
 			{
+				Scanner file = new Scanner(new File("CreditCardNumbers"));
+				while (file.hasNext())
+					{
+						cardNumber = file.nextLong();
+						stripNumbers();
+						doubleNumbers();
+						addNumbers();
+					}
 
-				stripNumbers();
-				doubleNumbers();
-				addNumbers();
 			}
+
+		
 
 		private static void addNumbers()
 			{
