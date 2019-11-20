@@ -11,6 +11,8 @@ public class CCValidation
 		static long vCard = validCard;
 		static long inCard = invalidCard;
 		static long cardNumber;
+		static int counter1 = 0;
+		static int counter2 = 0;
 
 		public static void main(String[] args) throws IOException
 			{
@@ -21,14 +23,23 @@ public class CCValidation
 						stripNumbers();
 						doubleNumbers();
 						addNumbers();
+						countValidAndInvalid();
+
 					}
+				printTotalCount();
 
 			}
 
-		
-
-		private static void addNumbers()
+		private static void printTotalCount()
 			{
+				System.out.println("The total number of valid credit cards is " + counter1);
+				System.out.println("The total number of invalid credit cards is " + counter2);
+
+			}
+
+		private static void countValidAndInvalid() throws IOException
+			{
+
 				int sum = 0;
 				for (int j = 0; j < creditNumbers.length; j++)
 					{
@@ -37,12 +48,34 @@ public class CCValidation
 					}
 				if (sum % 10 == 0)
 					{
-						System.out.println("This number is a valid credit card number.");
+						counter1++;
 					}
 				else
 					{
-						System.out.println("This is not a valid credit card number.");
+						counter2++;
 					}
+
+			}
+
+		private static void addNumbers()
+			{
+
+				int sum = 0;
+				for (int j = 0; j < creditNumbers.length; j++)
+					{
+						sum += creditNumbers[j];
+
+					}
+				if (sum % 10 == 0)
+					{
+						System.out.println("This is a valid credit card number");
+
+					}
+				else
+					{
+						System.out.println("This is an invalid credit card number");
+					}
+
 			}
 
 		private static void doubleNumbers()
