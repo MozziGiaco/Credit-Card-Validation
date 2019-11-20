@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class CCValidation
 	{
 
-		static long validCard = (long) 5424180123456788.;
+		static long validCard = (long) 5424180123456789.;
 		static long invalidCard = (long) 5424180123456788.;
 		static long[] creditNumbers = new long[16];
 		static long vCard = validCard;
@@ -60,12 +60,12 @@ public class CCValidation
 
 		public static void stripNumbers()
 			{
-				System.out.println(vCard);
+				System.out.println(cardNumber);
 				for (int i = creditNumbers.length - 1; i >= 0; i--)
 					{
-						long lastDigit = validCard % 10;
+						long lastDigit = cardNumber % 10;
 
-						validCard /= 10;
+						cardNumber /= 10;
 						creditNumbers[i] = lastDigit;
 					}
 			}
